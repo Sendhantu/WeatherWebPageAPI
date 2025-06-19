@@ -33,7 +33,7 @@ def weatherforcast():
     if not city_name:
         return "No city provided", 400
 
-    api_key = "722525c8b51b4d9315b3b8577a599c7e"
+    api_key = ""
     baseurl = "http://api.openweathermap.org/data/2.5/forecast"
     params = {
         'q': city_name, 'appid': api_key, 'units': 'metric'

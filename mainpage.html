@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather Forecast</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #e0f7fa, #ffffff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .box {
+      width: 420px;
+      background-color: white;
+      color: black;
+      text-align: center;
+      padding: 40px 25px;
+      border: 2px solid #90caf9;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease-in-out;
+    }
+    .box:hover {
+      transform: scale(1.02);
+    }
+    h2 {
+      color: #1565c0;
+      margin-bottom: 20px;
+      font-size: 26px;
+    }
+    .input-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 25px;
+    }
+    input[type="text"] {
+      width: 280px;
+      height: 38px;
+      font-size: 16px;
+      padding: 8px 10px;
+      margin-bottom: 20px;
+      border: 2px solid #90caf9;
+      border-radius: 6px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    input[type="text"]:focus {
+      border-color: #1976d2;
+    }
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 15px;
+    }
+    button {
+      width: 130px;
+      height: 38px;
+      font-size: 15px;
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #0d47a1;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>☁️ Weather Forecast</h2>
+    <form action="/" method="post">
+      <div class="input-section">
+        <input type="text" placeholder="Enter City Name..." id="city" name="city" required>
+        <div class="button-group">
+          <button type="submit" name="action" value="Submit">✅ Submit</button>
+          <!--<button type="submit" name="action" value="Tour">🌍 Tour</button>-->
+            <button type="submit" name="action" value="Forecast"> Forecast</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

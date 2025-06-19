@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ weather.city }}</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: #f0f0f0;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px;
+            margin: 0;
+        }
+        h1 {
+            font-size: 3rem;
+            color: #90caf9;
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-size: 2.2rem;
+            margin: 0;
+            color: #ffffff;
+        }
+        .info {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            color: #cfd8dc;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+            width: 80%;
+            max-width: 900px;
+        }
+        .box {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #455a64;
+            text-align: center;
+        }
+        .label {
+            color: #b0bec5;
+            font-size: 1rem;
+        }
+        .value {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+        .top-right-box {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+        }
+        .home-button {
+            padding: 12px 26px;
+            font-size: 0.9rem;
+            background-color: #ffffff;
+            color: #0e1d2f;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .home-button:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ weather.city }}</h1>
+    <h2>{{ weather.temperature }}°C</h2>
+    <div class="info">Feels like {{ weather.feels_like }}°C</div>
+    <div class="info">{{ weather.description }}</div>
+
+    <div class="grid">
+        <div class="box">
+            <div class="label">Humidity</div>
+            <div class="value">{{ weather.humidity }}%</div>
+        </div>
+        <div class="box">
+            <div class="label">Wind Speed</div>
+            <div class="value">{{ weather.wind_speed }} km/h</div>
+        </div>
+        <div class="box">
+            <div class="label">Pressure</div>
+            <div class="value">{{ weather.pressure }} hPa</div>
+        </div>
+        <div class="box">
+            <div class="label">Sunrise</div>
+            <div class="value">{{ weather.sunrise }}</div>
+        </div>
+        <div class="box">
+            <div class="label">Sunset</div>
+            <div class="value">{{ weather.sunset }}</div>
+        </div>
+    </div>
+
+    <form action="/" method="post">
+        <div class="top-right-box">
+            <input type="submit" name="submit" value="Home" class="home-button">
+        </div>
+    </form>
+
+</body>
+</html>

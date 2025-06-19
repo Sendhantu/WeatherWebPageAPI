@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forecast</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #e3f2fd;
+        }
+        .card {
+            background: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #1565c0;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+<h1>📅 5-Time Weather Forecast</h1>
+
+{% if error %}
+    <p style="color: red;">{{ error }}</p>
+{% elif weather_data %}
+    {% for date, entries in weather_data.items() %}
+    <div class="card">
+        <h2>{{ date }}</h2>
+        <ul>
+            {% for entry in entries %}
+                <li>{{ entry.time }} — 🌡 {{ entry.temp }}°C — {{ entry.desc }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endfor %}
+{% else %}
+    <p>No forecast data available.</p>
+{% endif %}
+
+<br>
+<a href="/">🔙 Back</a>
+</body>
+</html>
